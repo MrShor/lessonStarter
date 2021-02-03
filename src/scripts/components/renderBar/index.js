@@ -1,1 +1,1 @@
-export { default } from "./renderBar";
+export { renderBar, reRenderDate } from "./renderBar";

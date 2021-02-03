@@ -19,6 +19,12 @@ const renderCalendar = ({ appElement, currentDate, objectTime}) => {
     thDatesPanel.classList.add("calendar-header__th");
     dayName.classList.add("calendar-header__th__day");
     dateNubmer.classList.add("calendar-header__th__number");
+    tdDatesPanel.classList.add("calendar-body__td");
+
+    if (daysName[weekDayIndex] === "Su" || daysName[weekDayIndex] === "St") {
+      thDatesPanel.classList.add("day-off");
+      tdDatesPanel.classList.add("day-off");
+    }
 
     dayName.textContent = daysName[weekDayIndex];
     dateNubmer.textContent = index;
@@ -31,6 +37,7 @@ const renderCalendar = ({ appElement, currentDate, objectTime}) => {
   calendarContainer.classList.add("calendar-container");
   calendarHeadTr.classList.add("calendar-header");
   calendarBodyTr.classList.add("calendar-body");
+  calendarContainer.id = "calendar-container";
 
   calendarBody.appendChild(calendarBodyTr);
   calendarHead.appendChild(calendarHeadTr);
