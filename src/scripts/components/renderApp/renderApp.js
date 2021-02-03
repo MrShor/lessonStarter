@@ -18,20 +18,31 @@ const renderApp = () => {
   // console.log(new Date(2021, 1, 2).toISOString());
   // console.log( new Date (Date.parse(currentDate.toISOString())));
 
-
   renderCalendar({ appElement, currentDate, objectTime });
   renderBar({ appElement, currentDate, objectTime });
 
   document.getElementById("prev-month-btn").addEventListener("click", function() {
+    let changedDate;
     objectTime.month = objectTime.month - 1;
-
+ 
+    changedDate = new Date(objectTime.year, objectTime.month);
+    objectTime.year = changedDate.getFullYear();
+    objectTime.month = changedDate.getMonth();
+    objectTime.day = changedDate.getDay();
+    
     document.getElementById("calendar-container").remove();
     renderCalendar({ appElement, currentDate, objectTime });
     reRenderDate(objectTime);
   });
 
   document.getElementById("next-month-btn").addEventListener("click", function() {
+    let changedDate;
     objectTime.month = objectTime.month + 1;
+
+    changedDate = new Date(objectTime.year, objectTime.month);
+    objectTime.year = changedDate.getFullYear();
+    objectTime.month = changedDate.getMonth();
+    objectTime.day = changedDate.getDay();
 
     document.getElementById("calendar-container").remove();
     renderCalendar({ appElement, currentDate, objectTime });

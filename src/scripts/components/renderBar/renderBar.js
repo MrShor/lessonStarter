@@ -33,5 +33,4 @@ export function renderBar ({ appElement, currentDate, objectTime }){
 export function reRenderDate(objectTime) {
   document.getElementById("date-month").textContent = `${monthNames[objectTime.month]}`;
   document.getElementById("date-year").textContent = `${objectTime.year}`;
-  console.log(objectTime);
 }
