@@ -5,8 +5,10 @@ body {
   line-height: 1.3em;
 }
 
-.dates-table {
+.calendar-container {
   margin: 0 auto;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 .calendar-bar {
@@ -36,7 +38,7 @@ body {
   }
 }
 
-.dates-panel {
+.calendar-header {
   &__th {
     vertical-align: middle;
     border: 1px solid #d7d7d7;
@@ -46,5 +48,22 @@ body {
     span {
       display: block;
     }
+
+    &__day {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__number {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.calendar-body {
+  td {
+    border: 1px solid #d7d7d7;
+    height: 34px;
   }
 }
